@@ -13,4 +13,4 @@ For use in development, the current model presents a vulnerability that does not
       targetPort: 8080
   >>> type: LoadBalancer
   
-  The problem that occurred is a failure to create the backend microservice deployment that leaves a vulnerability in inter-pod communication where it will be corrected with a manual deployment using NodePort.
+  The problem that occurred is a failure to create the backend microservice deployment that leaves a vulnerability in inter-pod communication where it will be fixed with a manual YAML deployment using NodePort.
