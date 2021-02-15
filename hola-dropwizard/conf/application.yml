@@ -8,7 +8,7 @@ helloapp:
 greeter:
 
   saying: ${GREETER_SAYING:-Gutten Tag Dropwizard}
-  host: ${GREETER_BACKEND_HOST:-localhost}
+  host: ${GREETER_BACKEND_HOST:-backend.default}
   port: ${GREETER_BACKEND_PORT:-8080}
 
 server:

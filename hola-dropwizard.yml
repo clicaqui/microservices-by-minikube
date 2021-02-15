@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dropwizard-deployment
+  labels:
+    group: msa
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dropwizard-app
+  template:
+    metadata:
+      labels:
+        app: dropwizard-app
+    spec:
+      containers:
+      - name: dropwizard
+        image: fabric8/hola-dropwizard:1.0
+        imagePullPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: hola-dropwizard
+spec:
+  selector:
+    app: dropwizard-app
+  ports:
+    - protocol: 'TCP'
+      port: 80
+      targetPort: 8080
+  type: LoadBalancer
